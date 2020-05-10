@@ -3,6 +3,7 @@ package testcases;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -29,5 +30,8 @@ public class LoginTest extends TestBase{
 		//Assert.assertTrue(isElementPresent(By.xpath(OR.getProperty("ADD_customer"))));
 		Thread.sleep(3000);
 		log.debug("Loggin Ececuted.");
+		Reporter.log("Login test executed successfully");
+		
+		
 	}
 }

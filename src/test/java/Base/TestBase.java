@@ -12,6 +12,7 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
@@ -32,6 +33,7 @@ public class TestBase {
 	public static Logger log = Logger.getLogger("devpinoyLogger");
 	public static FileInputStream fi_OR;
 	public POIHelper myPOIHelper=null;
+	public static WebDriverWait wait;
 	
 	
 	
@@ -77,6 +79,7 @@ public class TestBase {
 			log.debug("NAvigated the the required page.");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("waiting_time")), TimeUnit.SECONDS);
+			wait=new WebDriverWait(driver,5);
 			
 		}
 		
