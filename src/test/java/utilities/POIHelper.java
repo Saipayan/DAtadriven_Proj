@@ -69,22 +69,77 @@ e.printStackTrace();
 }  
 }  
 
-public int getRowcount(String path) throws EncryptedDocumentException, IOException
+public int getRowcount(File file) throws EncryptedDocumentException, IOException
 {
-	int number;
-	fis = new FileInputStream(path);
-	workbook = new XSSFWorkbook(fis);
-	sheet = workbook.getSheetAt(0);
-	fis.close();
-	int index = 0;
-	if(index==-1)
-		return 0;
-	else{
-	sheet = workbook.getSheetAt(index);
-	number=sheet.getLastRowNum()+1;
-	return number;
+	Workbook workbook=WorkbookFactory.create(file);
+	Sheet sheet0=workbook.getSheetAt(0);
+	int count =0;
+	for(Row row : sheet0)
+	{
+		count++;
 	}
+	return count;
 }
+
+
+//returns the data from a cell
+	public String getCellData(String colName,int rowNum){
+		try{
+			if(rowNum <=0)
+				return "";
+		
+		int index = 0;
+		int col_Num=-1;
+		if(index==-1)
+			return "";
+		
+		sheet = workbook.getSheetAt(index);
+		row=sheet.getRow(0);
+		for(int i=0;i<row.getLastCellNum();i++){
+			//System.out.println(row.getCell(i).getStringCellValue().trim());
+			if(row.getCell(i).getStringCellValue().trim().equals(colName.trim()))
+				col_Num=i;
+		}
+		if(col_Num==-1)
+			return "";
+		
+		sheet = workbook.getSheetAt(index);
+		row = sheet.getRow(rowNum-1);
+		if(row==null)
+			return "";
+		cell = row.getCell(col_Num);
+		
+		if(cell==null)
+			return "";
+		
+		String result="";
+		
+		switch(cell.getCellType())  
+		{  
+		case NUMERIC:   
+			cell.getNumericCellValue();   
+			result=String.valueOf(cell.getNumericCellValue());
+		break;  
+		case STRING:    
+		result=String.valueOf(cell.getStringCellValue());
+		break; 
+		case BLANK:    
+			result= "";
+			break; 
+		default:
+		}  
+		
+		return result;
+		
+		
+		}
+		catch(Exception e){
+			
+			e.printStackTrace();
+			return "row "+rowNum+" or column "+colName +" does not exist in xls";
+		}
+	}
+	
 
 
 public int getColumncount(File file) throws EncryptedDocumentException, IOException

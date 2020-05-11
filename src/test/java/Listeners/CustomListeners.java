@@ -9,6 +9,7 @@ import org.testng.ITestListener;
 import org.testng.ITestNGListener;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.SkipException;
 import org.testng.internal.annotations.IListeners;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -32,6 +33,16 @@ public class CustomListeners implements ITestListener {
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
+		
+		try {
+			if(!TestUtil.isTEstRunnable(result.getTestClass().getName()))
+			{
+				throw new SkipException("Skipping the test :" +result.getTestClass().getName());
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		ExtentTest test = extent.createTest(result.getTestClass().getName()+"     @TestCase : "+result.getMethod().getMethodName());
         testReport.set(test);

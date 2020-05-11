@@ -6,15 +6,15 @@
     <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     <listener class-name="Listeners.CustomListeners"/>
   </listeners>
-  <test thread-count="5" name="Add Customer TEst(failed)">
+  <test thread-count="5" name="Open Account Test(failed)">
     <classes>
-      <class name="testcases.AddCustomertTEST">
+      <class name="testcases.OpenAccount">
         <methods>
+          <include name="Openaccount"/>
           <include name="setUP"/>
-          <include name="AddCustomer" invocation-numbers="0 1"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- testcases.AddCustomertTEST -->
+      </class> <!-- testcases.OpenAccount -->
     </classes>
-  </test> <!-- Add Customer TEst(failed) -->
+  </test> <!-- Open Account Test(failed) -->
 </suite> <!-- Failed suite [Data driven Basics] -->

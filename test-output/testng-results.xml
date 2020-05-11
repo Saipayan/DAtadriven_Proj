@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login test executed successfully]]>
@@ -13,13 +13,16 @@
     <line>
       <![CDATA[TEST has got passed!]]>
     </line>
+    <line>
+      <![CDATA[TEST has got passed!]]>
+    </line>
   </reporter-output>
-  <suite started-at="2020-05-10T09:22:43Z" name="Data driven Basics" finished-at="2020-05-10T09:22:56Z" duration-ms="13317">
+  <suite started-at="2020-05-11T16:39:30Z" name="Data driven Basics" finished-at="2020-05-11T16:43:00Z" duration-ms="210215">
     <groups>
     </groups>
-    <test started-at="2020-05-10T09:22:43Z" name="LoginTest" finished-at="2020-05-10T09:22:47Z" duration-ms="4145">
+    <test started-at="2020-05-11T16:39:30Z" name="LoginTest" finished-at="2020-05-11T16:39:33Z" duration-ms="3847">
       <class name="testcases.LoginTest">
-        <test-method signature="loginAs_BANKmanager()[pri:0, instance:testcases.LoginTest@13bc8645]" started-at="2020-05-10T09:22:43Z" name="loginAs_BANKmanager" finished-at="2020-05-10T09:22:47Z" duration-ms="4096" status="PASS">
+        <test-method signature="loginAs_BANKmanager()[pri:0, instance:testcases.LoginTest@7922d892]" started-at="2020-05-11T16:39:30Z" name="loginAs_BANKmanager" finished-at="2020-05-11T16:39:33Z" duration-ms="3788" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login test executed successfully]]>
@@ -31,13 +34,9 @@
         </test-method> <!-- loginAs_BANKmanager -->
       </class> <!-- testcases.LoginTest -->
     </test> <!-- LoginTest -->
-    <test started-at="2020-05-10T09:22:47Z" name="Add Customer TEst" finished-at="2020-05-10T09:22:56Z" duration-ms="8564">
+    <test started-at="2020-05-11T16:39:34Z" name="Add Customer TEst" finished-at="2020-05-11T16:40:01Z" duration-ms="27005">
       <class name="testcases.AddCustomertTEST">
-        <test-method is-config="true" signature="setUP()[pri:0, instance:testcases.AddCustomertTEST@4fa1c212]" started-at="2020-05-10T09:22:35Z" name="setUP" finished-at="2020-05-10T09:22:43Z" duration-ms="7769" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUP -->
-        <test-method signature="AddCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.AddCustomertTEST@4fa1c212]" started-at="2020-05-10T09:22:49Z" name="AddCustomer" data-provider="dp" finished-at="2020-05-10T09:22:53Z" duration-ms="3754" status="PASS">
+        <test-method signature="AddCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.AddCustomertTEST@19c65cdc]" started-at="2020-05-11T16:39:51Z" name="AddCustomer" data-provider="dp" finished-at="2020-05-11T16:39:58Z" duration-ms="6338" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -66,7 +65,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- AddCustomer -->
-        <test-method signature="AddCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.AddCustomertTEST@4fa1c212]" started-at="2020-05-10T09:22:53Z" name="AddCustomer" data-provider="dp" finished-at="2020-05-10T09:22:56Z" duration-ms="3405" status="PASS">
+        <test-method signature="AddCustomer(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:testcases.AddCustomertTEST@19c65cdc]" started-at="2020-05-11T16:39:58Z" name="AddCustomer" data-provider="dp" finished-at="2020-05-11T16:40:01Z" duration-ms="3368" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -95,11 +94,38 @@
             </line>
           </reporter-output>
         </test-method> <!-- AddCustomer -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.AddCustomertTEST@4fa1c212]" started-at="2020-05-10T09:22:56Z" name="tearDown" finished-at="2020-05-10T09:22:57Z" duration-ms="730" status="PASS">
+      </class> <!-- testcases.AddCustomertTEST -->
+    </test> <!-- Add Customer TEst -->
+    <test started-at="2020-05-11T16:40:01Z" name="Open Account Test" finished-at="2020-05-11T16:43:00Z" duration-ms="178738">
+      <class name="testcases.OpenAccount">
+        <test-method is-config="true" signature="setUP()[pri:0, instance:testcases.OpenAccount@3e6104fc]" started-at="2020-05-11T16:39:21Z" name="setUP" finished-at="2020-05-11T16:39:30Z" duration-ms="8328" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUP -->
+        <test-method signature="Openaccount(java.lang.String, java.lang.String)[pri:0, instance:testcases.OpenAccount@3e6104fc]" started-at="2020-05-11T16:41:22Z" name="Openaccount" data-provider="dp" finished-at="2020-05-11T16:43:00Z" duration-ms="97333" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Saipayan Chakraborty]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Rupee]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[TEST has got passed!]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- Openaccount -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:testcases.OpenAccount@3e6104fc]" started-at="2020-05-11T16:43:00Z" name="tearDown" finished-at="2020-05-11T16:43:01Z" duration-ms="669" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- testcases.AddCustomertTEST -->
-    </test> <!-- Add Customer TEst -->
+      </class> <!-- testcases.OpenAccount -->
+    </test> <!-- Open Account Test -->
   </suite> <!-- Data driven Basics -->
 </testng-results>

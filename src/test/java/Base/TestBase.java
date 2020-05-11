@@ -13,12 +13,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.POIHelper;
+import utilities.TestUtil;
 
 public class TestBase {
 
@@ -86,6 +88,17 @@ public class TestBase {
 		
 	}
 	
+	public static void verifyEquals(String actual,String Expected) throws IOException
+	{
+		try
+		{
+			Assert.assertEquals(actual, Expected);
+		}
+		catch(Exception e)
+		{
+			TestUtil.CAptureScreenShot();
+		}
+	}
 	
 	@AfterSuite
 	public void tearDown()

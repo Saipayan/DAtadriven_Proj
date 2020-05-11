@@ -1,5 +1,7 @@
 package testcases;
 
+import java.io.IOException;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -21,7 +23,12 @@ public class LoginTest extends TestBase{
 	@Test
 	public void loginAs_BANKmanager() throws InterruptedException
 	{
-		
+		try {
+			verifyEquals("ABC","ABC");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println(OR.size());
 		log.debug("Inside login Test..");
 		System.out.println(OR.getProperty("Bank_MAnager_Login_BTN_Home"));
